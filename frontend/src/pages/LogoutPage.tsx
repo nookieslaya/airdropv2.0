@@ -28,7 +28,7 @@ export const LogoutPage = () => {
                         }
                         return currentCount - 1;
                     });
-                }, 10000);
+                }, 1000);
 
             } catch (e) {
                 console.log(e)
