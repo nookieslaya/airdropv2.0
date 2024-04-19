@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {Link} from "react-router-dom"
 import {Label} from "@radix-ui/react-label";
+import airdrop  from "../images/Airdrop.png"
 export const LoginPage = () => {
     const store = authStore()
     const  navigate = useNavigate()
@@ -15,8 +16,8 @@ export const LoginPage = () => {
     }
 
     return (
-        <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
-            <div className="flex items-center justify-center py-12">
+        <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px] ">
+            <div className="flex items-center h-full justify-center lg:py-12 pt-[150px]">
                 <div className="mx-auto grid w-[350px] gap-6">
                     <div className="grid gap-2 text-center">
                         <h1 className="text-3xl font-bold">Login</h1>
@@ -26,29 +27,34 @@ export const LoginPage = () => {
                     </div>
                     <form onSubmit={handleLogin}>
                         <div className="grid gap-2">
-                        <div className="grid gap-4">
-                            <div className="grid gap-2">
-                                <Label>Email</Label>
-                                <Input onChange={store.updateLoginForm} value={store.loginForm.email}
-                                       type="email" name="email"/>
+                            <div className="grid gap-4">
+                                <div className="grid gap-2">
+                                    <Label>Email</Label>
+                                    <Input onChange={store.updateLoginForm} value={store.loginForm.email}
+                                           type="email" name="email"/>
+                                </div>
+                                <div className="grid gap-2">
+                                    <Label>Email</Label>
+                                    <Input onChange={store.updateLoginForm} value={store.loginForm.password}
+                                           type="password" name="password"/>
+                                </div>
                             </div>
-                            <div className="grid gap-2">
-                                <Label>Email</Label>
-                                <Input onChange={store.updateLoginForm} value={store.loginForm.password}
-                                       type="password" name="password"/>
+                            <div className="mt-4 text-center text-sm">
+                                Don&apos;t have an account?{" "}
+                                <Link to="/register" className="underline">
+                                    Sign up
+                                </Link>
                             </div>
-                        </div>
-                        <div className="mt-4 text-center text-sm">
-                            Don&apos;t have an account?{" "}
-                            <Link to="/register" className="underline">
-                                Sign up
-                            </Link>
-                        </div>
-                        <Button type="submit" className="w-full">Login</Button>
+                            <Button type="submit" className="w-full">Login</Button>
                         </div>
                     </form>
                 </div>
             </div>
+            <div className="hidden z-20 lg:block">
+                <img src={airdrop}
+                     className="object-contain max-w-[70%] dark:brightness-[0.9]"
+                />
+            </div>
         </div>
-)
+    )
 };
