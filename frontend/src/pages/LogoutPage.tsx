@@ -1,15 +1,54 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 import authStore from "../stores/authStore.ts";
+
 export const LogoutPage = () => {
     const store = authStore()
-    useEffect(()=>{
-        store.logout()
-    })
+    const [count, setCount] = useState(3);
+
+    useEffect(() => {
+        const logoutAndRedirect = async () => {
+            try {
+                store.logout()
+
+                // Start a countdown
+                const countDown = setInterval(() => {
+                    setCount((currentCount) => {
+                        if (currentCount <= 1) {
+                            clearInterval(countDown);
+                            window.location.href = "/login";
+                            return currentCount;
+                        }
+                        return currentCount - 1;
+                    });
+                }, 10000);
+
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        logoutAndRedirect()
+
+    }, [])
+
     return (
-        <div>
-
-            <h2>You have been loged out</h2>
-
+        <div className="flex justify-center items-center h-screen">
+            <Card className="text-center w-full md:w-1/2 m-5">
+                <CardHeader>
+                    <h2 className="text-xl md:text-2xl">You have been logged out</h2>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-md md:text-xl">Redirecting in {count} seconds...</p>
+                </CardContent>
+            </Card>
         </div>
     );
 };

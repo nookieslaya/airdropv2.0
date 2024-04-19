@@ -2,6 +2,8 @@ import {create} from 'zustand'
 import axios from "axios";
 
 
+
+
 const authStore = create((set) => ({
     loggedIn: null,
 
@@ -74,6 +76,7 @@ const authStore = create((set) => ({
         try {
             await axios.get("/logout" )
             set({loggedIn: false})
+
         } catch (e) {
             console.log(e)
         }
