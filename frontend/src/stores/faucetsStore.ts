@@ -50,8 +50,12 @@ const faucetsStore = create((set) => ({
                 faucets: [...faucets, res.data.faucet],
                 createFaucet: {
                     name: "", url: ''
-                }
+                },
+
             });
+        toast({
+            description: "You create new faucet.",
+        })
            
 
     },
