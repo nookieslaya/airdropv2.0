@@ -19,7 +19,10 @@ const userSchema = mongoose.Schema(
         },
         faucets:[{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Faucet'}]
+            ref: 'Faucet'}],
+        daily:[{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Daily'}],
     },
 
 )
