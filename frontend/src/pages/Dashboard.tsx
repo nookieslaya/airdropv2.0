@@ -1,11 +1,15 @@
 import Faucets from "@/pages/Faucets.tsx";
 import Daily from "@/pages/Daily.tsx";
+import Reflinks from "@/pages/Reflinks.tsx";
 
 export const Dashboard = () => {
     return (
-        <div className="flex flex-col md:flex-row">
-        <Faucets/>
-            <Daily/>
+        <div className="flex justify-between">
+            <div className="left flex flex-col w-1/"></div>
+            <div className="right w-1/4 "><Faucets/>
+                <Daily/>
+                <Reflinks/></div>
+
         </div>
     )
 };

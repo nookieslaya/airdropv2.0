@@ -59,6 +59,7 @@ function Faucets() {
                   <CreateFaucet store={store}/>
                 </div>
             </Table>
+            
         </div>
     );
 }
