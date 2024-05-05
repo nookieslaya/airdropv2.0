@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import faucetsStore from '../stores/faucetsStore.ts'
 import { FaTrash } from "react-icons/fa6";
 import {
@@ -9,7 +9,14 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 import {Link} from "react-router-dom";
 import {CreateFaucet} from "@/components/faucets/CreateFaucet.tsx";
 import {UpdateFaucet} from "@/components/faucets/UpdateFaucet.tsx";
@@ -25,6 +32,8 @@ function Faucets() {
 
 
     return (
+        <Card>
+            <CardContent>
         <div className="Faucets">
             <Table className="max-w-[800px]">
                 <TableHeader>
@@ -35,7 +44,7 @@ function Faucets() {
                 {store.faucets && store.faucets.map((faucet) => {
                     return (
                         <TableBody>
-                            <TableRow className="flex justify-between container items-center" key={faucet._id}>
+                            <TableRow className="flex justify-between items-center" key={faucet._id}>
                                 <TableCell className="flex">
                                     <Link to={faucet.url} target="_blank">
                                         <span className="font-bold"> {faucet.name}</span>
@@ -61,6 +70,8 @@ function Faucets() {
             </Table>
             
         </div>
+            </CardContent>
+        </Card>
     );
 }
 
