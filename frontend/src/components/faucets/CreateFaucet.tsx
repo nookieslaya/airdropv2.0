@@ -41,7 +41,7 @@ export const CreateFaucet = () => {
                                    value={store.createFaucet.url}
                                    onChange={store.updateCreateFormField}/>
                             <DialogFooter className='py-6'>
-                                <Button className="py-6" type="submit">Create faucet</Button>
+                                <Button className="py-6" variant="outline" type="submit">Create faucet</Button>
                             </DialogFooter>
                         </form>
                     </div>

@@ -19,7 +19,7 @@ const store = dailyStore()
 
 
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
+        <Dialog open={open} onOpenChange={setOpen} >
             <DialogTrigger asChild>
                 <button onSelect={(e) => e.preventDefault()} onClick={() => {
                     store.toggleUpdate(daily)
@@ -29,7 +29,7 @@ const store = dailyStore()
 
             </DialogTrigger>
 
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] text-muted-foreground">
                 <DialogHeader>
                     <DialogTitle>Update Daily Task</DialogTitle>
                 </DialogHeader>
