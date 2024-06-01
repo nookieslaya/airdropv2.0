@@ -13,16 +13,16 @@ const Countdown = ({ date }) => {
             const duration = moment.duration(diff);
             const days = duration.days();
             const hours = duration.hours();
-            const minutes = duration.minutes();
-            const seconds = duration.seconds();
+            // const minutes = duration.minutes();
+            // const seconds = duration.seconds();
 
-            setCountdown(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+            setCountdown(`${days} days, ${hours} hours`);
         }, 1000);
 
         return () => clearInterval(interval);
     }, [date]);
 
-    return <div>{countdown}</div>;
+    return <div className="text-orb ">{countdown}</div>;
 };
 
 export default Countdown;

@@ -20,11 +20,11 @@ const reminderSchema = mongoose.Schema(
         },
         color: {
             type: String,
-            required: true,
+
         },
         complete: {
             type: Boolean,
-            required: true,
+
         },
         user:{
             type: mongoose.Schema.Types.ObjectId,

@@ -1,4 +1,7 @@
+
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -17,6 +20,11 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        "tit": ['Titillium Web', 'sans-serif'],
+        "open-sans": ['Open Sans', 'sans-serif'],
+        "orb": ['Orbitron', 'sans-serif']
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

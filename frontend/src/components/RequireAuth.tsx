@@ -17,6 +17,6 @@ export const RequireAuth = (props) => {
         return <Navigate to="/login"/>
     }
     return (
-        <div>{props.children}</div>
+        <div className="w-full">{props.children}</div>
     )
 }

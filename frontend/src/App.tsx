@@ -8,7 +8,7 @@ import {SignupPage} from "@/pages/SignupPage.tsx";
 import {RequireAuth} from "@/components/RequireAuth.tsx";
 import {LogoutPage} from "@/pages/LogoutPage.tsx";
 import {Dashboard} from "@/pages/Dashboard.tsx";
-
+import './App.css'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
 
     return (
-        <div>
+        <div className="text-open-sans bg-background">
             <BrowserRouter>
             <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
                 <Navbar/>

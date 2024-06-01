@@ -22,30 +22,30 @@ const Navbar = () => {
         <>
             <NavigationMenu className='flex m-2 space-x-2'>
 
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant='outline'>Profile</Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className='w-56'>
-                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                        <DropdownMenuSeparator/>
-                        <DropdownMenuGroup>
-                            <DropdownMenuItem>
-                                <User className='mr-2 h-4 w-4'/>
-                                <Link to='/profile'>Profile</Link>
+                {/*<DropdownMenu>*/}
+                {/*    <DropdownMenuTrigger asChild>*/}
+                {/*        <Button variant='outline'>Profile</Button>*/}
+                {/*    </DropdownMenuTrigger>*/}
+                {/*    <DropdownMenuContent className='w-56'>*/}
+                {/*        <DropdownMenuLabel>My Account</DropdownMenuLabel>*/}
+                {/*        <DropdownMenuSeparator/>*/}
+                {/*        /!*<DropdownMenuGroup>*!/*/}
+                {/*        /!*    <DropdownMenuItem>*!/*/}
+                {/*        /!*        <User className='mr-2 h-4 w-4'/>*!/*/}
+                {/*        /!*        <Link to='/profile'>Profile</Link>*!/*/}
 
-                                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
-                        <DropdownMenuSeparator/>
-                        <DropdownMenuItem onClick={() => {
-                        }}>
-                            <LogOut className='mr-2 h-4 w-4'/>
-                            <span>Log out</span>
-                            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                {/*        /!*        <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>*!/*/}
+                {/*        /!*    </DropdownMenuItem>*!/*/}
+                {/*        /!*</DropdownMenuGroup>*!/*/}
+                {/*        <DropdownMenuSeparator/>*/}
+                {/*        <DropdownMenuItem onClick={() => {*/}
+                {/*        }}>*/}
+                {/*            <LogOut className='mr-2 h-4 w-4'/>*/}
+                {/*            <span>Log out</span>*/}
+                {/*            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>*/}
+                {/*        </DropdownMenuItem>*/}
+                {/*    </DropdownMenuContent>*/}
+                {/*</DropdownMenu>*/}
 
                 <div className='mr-5'>
                     <NavigationMenuItem className='flex gap-x-4'>
