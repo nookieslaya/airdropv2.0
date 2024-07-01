@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa6";
 import {
     Table,
@@ -8,7 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardTitle} from "@/components/ui/card";
 import {Input}from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { UpdateReflinks } from "@/components/reflinks/UpdateReflinks.tsx";
@@ -17,14 +17,14 @@ import reflinksStore from "../stores/reflinksStore.ts";
 import { CreateReflinks } from "@/components/reflinks/CreateReflinks.tsx";
 
 function Reflinks() {
-    const store = reflinksStore();
+    const store : any = reflinksStore();
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         store.fetchReflinks();
     }, []);
 
-    const filteredReflinks = store.reflinks ? store.reflinks.filter((reflink) =>
+    const filteredReflinks = store.reflinks ? store.reflinks.filter((reflink : any) =>
         reflink.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         reflink.url.toLowerCase().includes(searchTerm.toLowerCase())
     ) : [];
@@ -49,7 +49,7 @@ function Reflinks() {
 
                 </TableHeader>
                     <div className="overflow-y-auto w-full">
-                {filteredReflinks.map((reflink) => (
+                {filteredReflinks.map((reflink : any) => (
                     <TableBody key={reflink._id} className="flex justify-between space-evenly px-6 ">
                         <TableRow className="flex hover:bg-accent justify-between w-full items-center px-4">
                             <TableCell className="flex w-full p-0">

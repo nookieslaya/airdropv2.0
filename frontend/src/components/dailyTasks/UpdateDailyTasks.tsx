@@ -12,9 +12,10 @@ import {Input} from "@/components/ui/input.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import dailyStore from "@/stores/dailyStore.ts";
 import {useState} from "react";
-export const UpdateDailyTasks = ({daily}) => {
 
-const store = dailyStore()
+export const UpdateDailyTasks = ({daily }: { daily: any }) => {
+
+const store : any = dailyStore()
     const [open, setOpen] = useState(false);
 
 

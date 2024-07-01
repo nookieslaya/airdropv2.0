@@ -6,10 +6,10 @@ import {Link} from "react-router-dom"
 import {Label} from "@radix-ui/react-label";
 import airdrop  from "../images/Airdrop.png"
 export const LoginPage = () => {
-    const store = authStore()
+    const store : any = authStore()
     const  navigate = useNavigate()
 
-    const handleLogin = async (e) => {
+    const handleLogin = async (e : any) => {
         e.preventDefault()
         await store.login(e)
         navigate("/")

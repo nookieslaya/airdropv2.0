@@ -12,8 +12,12 @@ import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
 import reminderStore from "@/stores/reminderStore.ts";
 
-export const CreateReminder= () => {
-    const store = reminderStore()
+
+interface CreateReminderProps {
+    reminder: any; // Update the type of reminder as needed
+}
+export const CreateReminder: React.FC<CreateReminderProps> = () =>{
+    const store : any = reminderStore()
     return (
         <Dialog>
             <DialogTrigger asChild>

@@ -6,9 +6,9 @@ import airdrop from "@/images/Airdrop.png";
 import {Label} from "@radix-ui/react-label";
 
 export const SignupPage = () => {
-    const store = authStore();
+    const store : any = authStore();
     const navigate = useNavigate();
-    const handleSignup = async (e) => {
+    const handleSignup = async (e : any) => {
         e.preventDefault();
         await store.signup();
 
@@ -52,7 +52,7 @@ export const SignupPage = () => {
                                         Login
                                     </Link>
                                 </div>
-                                <Button type="Submit">Register</Button>
+                                <Button type="submit">Register</Button>
                             </div>
                         </div>
                     </form>

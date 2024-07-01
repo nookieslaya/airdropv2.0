@@ -9,10 +9,14 @@ import {
 import {Button} from "@/components/ui/button.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
-import faucetsStore from "@/stores/faucetsStore.ts";
 
-export const CreateFaucet = () => {
-    const store = faucetsStore()
+
+interface CreateFaucetProps {
+    store: any; // Update the type of store as needed
+}
+
+export const CreateFaucet: React.FC<CreateFaucetProps> = ({ store }) =>{
+
     return (
         <Dialog>
             <DialogTrigger asChild>

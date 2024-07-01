@@ -20,13 +20,16 @@ import {UpdateFaucet} from "@/components/faucets/UpdateFaucet.tsx";
 import {Input} from "@/components/ui/input.tsx";
 
 function Faucets() {
-    const store = faucetsStore()
+
+
+
+    const store : any = faucetsStore()
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         store.fetchFaucets()
     }, []);
-    const filteredFaucets = store.faucets ? store.faucets.filter((faucet) =>
+    const filteredFaucets = store.faucets ? store.faucets.filter((faucet : any) =>
         faucet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         faucet.url.toLowerCase().includes(searchTerm.toLowerCase())
     ) : [];

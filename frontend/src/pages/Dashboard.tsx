@@ -3,13 +3,15 @@ import Daily from "@/pages/Daily.tsx";
 import Reflinks from "@/pages/Reflinks.tsx";
 import Reminder from "@/pages/Reminder.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import BG from '/src/images/bg1.png'
+
+import reminder from "@/pages/Reminder.tsx";
+// import BG from '/src/images/bg1.png'
 
 export const Dashboard = () => {
     return (
         <div className="flex gap-10 my-10 flex-col justify-between relative">
             {/*<img src={BG} alt="" className= "absolute opacity-90 w-full  bg-violet-300 left-0 top-0"/>*/}
-            <div className="left flex flex-col w-full"><Reminder/></div>
+            <div className="left flex flex-col w-full">{<Reminder reminder={reminder}/>}</div>
             <div className="right flex-colflex w-full ">
 
 

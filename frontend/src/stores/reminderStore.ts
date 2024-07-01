@@ -31,7 +31,7 @@ const reminderStore = create((set) => ({
             console.log(err)
         }
     },
-    createSingleReminder: async (e) => {
+    createSingleReminder: async (e : any) => {
         e.preventDefault();
         const {createReminder, reminders} = reminderStore.getState();
         // Check if the fields are not empty

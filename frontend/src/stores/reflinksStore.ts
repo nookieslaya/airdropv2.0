@@ -17,10 +17,10 @@ const reflinksStore = create((set) => ({
             console.log(err)
         }
     },
-    updateCreateFormField: e => {
+    updateCreateFormField: (e : any) => {
         const {name, value} = e.target
         try {
-            set((state) => {
+            set((state : any) => {
                 return {
                     createReflink: {
                         ...state.createReflink, [name]: value,

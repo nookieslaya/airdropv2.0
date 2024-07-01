@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import  {useEffect, useState} from "react";
 import dailyStore from "@/stores/dailyStore.ts";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import {Link} from "react-router-dom";
@@ -12,14 +12,15 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
+
 const Daily = () => {
-    const store = dailyStore()
+    const store : any  = dailyStore()
     const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         store.fetchDaily()
     }, []);
 
-    const filteredDaily = store.dailyTask ? store.dailyTask.filter((daily) =>
+    const filteredDaily = store.dailyTask ? store.dailyTask.filter((daily : any) =>
         daily.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         daily.url.toLowerCase().includes(searchTerm.toLowerCase())
     ) : [];
@@ -43,7 +44,7 @@ const Daily = () => {
                     </TableHead>
                 </TableHeader>
                 <div className="overflow-y-auto w-full">
-                    {filteredDaily.map((daily) => {
+                    {filteredDaily.map((daily: any) => {
                         return (
                             <TableBody key={daily._id} className="flex justify-between space-evenly px-6">
                                 <TableRow className="flex justify-between items-center w-full" >

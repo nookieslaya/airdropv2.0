@@ -12,8 +12,8 @@ import Countdown from "@/components/reminder/Countdown.tsx";
 import {FaTrash} from "react-icons/fa6";
 import {CreateReminder} from "@/components/reminder/CreateReminder.tsx";
 
-const Reminder = ({reminder}) => {
-    const store = reminderStore();
+const Reminder = (reminder : any) => {
+    const store : any = reminderStore();
 
     useEffect(() => {
         store.fetchReminders();
@@ -24,7 +24,7 @@ const Reminder = ({reminder}) => {
             {!store.reminders ? (
                 <Skeleton className="w-[100px] h-[20px] rounded-full" />
             ) : (
-                [...store.reminders].sort((a, b) => new Date(a.date) - new Date(b.date)).map((reminder) => (
+                [...store.reminders].sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((reminder: any) => (
                     <Card className={`${
                         new Date(reminder.date).toLocaleDateString() === new Date().toLocaleDateString()
                             ? 'bg-red-500/10'

@@ -13,9 +13,9 @@ import {Button} from "@/components/ui/button.tsx";
 
 import {useState} from "react";
 import reflinksStore from "@/stores/reflinksStore.ts";
-export const UpdateReflinks = ({reflink}) => {
+export const UpdateReflinks = ({reflink }: { reflink: string }) => {
 
-const store = reflinksStore()
+const store: any = reflinksStore()
     const [open, setOpen] = useState(false);
 
 

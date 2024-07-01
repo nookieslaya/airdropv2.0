@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 
-const CopyButton = ({ url }) => {
+const CopyButton = ({ url }: { url: string }) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {

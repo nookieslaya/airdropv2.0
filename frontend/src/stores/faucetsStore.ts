@@ -19,7 +19,7 @@ const faucetsStore = create((set) => ({
         }
     },
 
-    updateCreateFormField: e => {
+    updateCreateFormField: (e: any) => {
         const {name, value} = e.target
         try {
             set((state) => {
@@ -34,7 +34,7 @@ const faucetsStore = create((set) => ({
         }
     },
 
-    createSingleFaucet: async (e) => {
+    createSingleFaucet: async (e : any) => {
             e.preventDefault();
 
             const {createFaucet, faucets} = faucetsStore.getState();
@@ -56,7 +56,7 @@ const faucetsStore = create((set) => ({
         toast({
             description: "You create new faucet.",
         })
-           
+
 
     },
     deleteFaucets: async (_id) => {
@@ -75,7 +75,7 @@ const faucetsStore = create((set) => ({
             console.log(err)
         }
     },
-    handleUpdateFieldChange: (e) => {
+    handleUpdateFieldChange: (e : any) => {
         const {value, name} = e.target
         set(state => {
             return {
@@ -91,7 +91,7 @@ const faucetsStore = create((set) => ({
         const {_id, name, url} = faucet
         set({updateForm: {name, url, _id}})
     },
-    updateFaucet: async (e) => {
+    updateFaucet: async (e : any) => {
         try{
         e.preventDefault()
         const {updateForm: {_id, name, url},faucets} = faucetsStore.getState()

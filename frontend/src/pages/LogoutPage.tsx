@@ -2,15 +2,14 @@ import {useEffect, useState} from "react";
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
+
     CardHeader,
-    CardTitle,
+
 } from "@/components/ui/card"
 import authStore from "../stores/authStore.ts";
 
 export const LogoutPage = () => {
-    const store = authStore()
+    const store : any = authStore()
     const [count, setCount] = useState(3);
 
     useEffect(() => {

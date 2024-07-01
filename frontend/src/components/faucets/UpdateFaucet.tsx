@@ -12,9 +12,9 @@ import {Input} from "@/components/ui/input.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import faucetsStore from "@/stores/faucetsStore.ts";
 import {useState} from "react";
-export const UpdateFaucet = ({faucet}) => {
+export const UpdateFaucet = ({faucet} : { faucet: any }) => {
 
-const store = faucetsStore()
+const store : any = faucetsStore()
     const [open, setOpen] = useState(false);
 
 

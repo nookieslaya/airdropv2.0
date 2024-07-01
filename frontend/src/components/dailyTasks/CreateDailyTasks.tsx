@@ -10,10 +10,14 @@ import {Button} from "@/components/ui/button.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
 
-import dailyStore from "@/stores/dailyStore.ts";
 
-export const CreateDailyTasks = () => {
-    const store = dailyStore()
+interface CreateDailyTasksProps {
+    store: any; // Update the type of store as needed
+}
+export const CreateDailyTasks: React.FC<CreateDailyTasksProps> = ({ store }) => {
+
+
+
     return (
         <Dialog>
             <DialogTrigger asChild>

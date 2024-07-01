@@ -3,8 +3,8 @@ import authStore from "@/stores/authStore";
 import {useEffect} from "react";
 import {Navigate} from "react-router-dom";
 
-export const RequireAuth = (props) => {
-    const store = authStore()
+export const RequireAuth = (props : any) => {
+    const store : any = authStore()
     useEffect(() => {
         if (store.loggedIn === null) {
             store.checkAuth()

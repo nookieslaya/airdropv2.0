@@ -1,10 +1,26 @@
-import {create} from 'zustand'
+import {create, SetState} from 'zustand'
 import axios from "axios";
 
 
 
+interface AuthStore {
+    loggedIn: boolean | null
+    loginForm: {
+        email: string
+        password: string
+    }
+    signupForm: {
+        email: string
+        password: string
+        name: string
+    }
+    login: () => void
+    signup: () => void
+    updateLoginForm: (e : any) => void
+    updateSignupForm: (e : any) => void
+}
 
-const authStore = create((set) => ({
+const authStore = create((set : SetState<AuthStore>) => ({
     loggedIn: null,
 
 
@@ -19,7 +35,7 @@ const authStore = create((set) => ({
         name: ""
     },
 
-    updateLoginForm: (e) => {
+    updateLoginForm: (e : any) => {
         const {name, value} = e.target
         set((state) => ({
             loginForm: {
@@ -42,8 +58,9 @@ const authStore = create((set) => ({
     login: async () => {
         try {
             const {loginForm} = authStore.getState()
-            const res = await axios.post('/login', loginForm )
-            set({signupForm: {email: "", password: "", }})
+            const res : any = await axios.post('/login', loginForm )
+            console.log(res.data)
+            set({signupForm: {email: "", password: "", name: ""}})
             set({loggedIn: true})
         }catch (e) {
 
@@ -57,6 +74,7 @@ const authStore = create((set) => ({
 
         try {
             const res = await axios.post('/signup', signupForm );
+            console.log(res.data)
            set({signupForm: {email: "", password: "", name: ""}})
         } catch (e) {
 

@@ -10,10 +10,12 @@ import {Button} from "@/components/ui/button.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
 
-import reflinksStore from "@/stores/reflinksStore.ts";
+interface CreateReflinksProps {
+    store: any; // Update the type of store as needed
+}
 
-export const CreateReflinks= () => {
-    const store = reflinksStore()
+export const CreateReflinks: React.FC<CreateReflinksProps> = ({ store }) =>  {
+
     return (
         <Dialog>
             <DialogTrigger asChild>
