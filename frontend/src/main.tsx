@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import axios from "axios";
 
-axios.defaults.baseURL = "https://airdropv2-0.onrender.com"
+axios.defaults.baseURL = "https://airdropv2-0.onrender.com/"
 axios.defaults.withCredentials = true
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
