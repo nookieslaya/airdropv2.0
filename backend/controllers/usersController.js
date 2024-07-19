@@ -28,13 +28,13 @@ const login = async (req, res) => {
         if (!passwordMatch) return res.sendStatus(401)
 
         const exp = Date.now() + 1000 * 60 * 60 * 24 * 30
-        const token = jwt.sign({sub: user._id, exp: exp}, "asdasdfeee3111")
+        const token = jwt.sign({sub: user._id, exp: exp}, process.env.JWT_SECRET)
 
         res.cookie("Authorization", token, {
             expires: new Date(exp),
             httpOnly: true,
             sameSite: 'lax',
-            secure: process.env.NODE_ENV === 'production'
+
         })
 
 
